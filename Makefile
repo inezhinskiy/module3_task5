@@ -27,9 +27,7 @@ windows:
 	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o bin/$(APP_NAME)-windows-amd64.exe .
 
 image:
-	docker build . -t $(IMAGE_TAG) \
-		--build-arg APP_NAME=$(APP_NAME) \
-		--build-arg HOST_ARCH=$(HOST_ARCH)
+	docker build . -t $(IMAGE_TAG) --build-arg APP_NAME=$(APP_NAME) --build-arg HOST_ARCH=$(HOST_ARCH)
 
 push:
 	docker push ${IMAGE_TAG}
