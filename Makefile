@@ -1,8 +1,7 @@
 APP_NAME=app 								#place app name here
 REGISTRY=quay.io/inezhinskiy				#place your registry
-HOST_OS=$(shell go env GOOS)
-HOST_ARCH=$(shell go env GOARCH)
-IMAGE_TAG=$(REGISTRY)/$(APP_NAME)-$(HOST_OS)-$(HOST_ARCH)
+HOST_ARCH=$(shell dpkg --print-architecture)
+IMAGE_TAG=$(REGISTRY)/$(APP_NAME)-$(HOST_ARCH)
 format:
 	gofmt -s -w ./ 
 
