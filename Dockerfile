@@ -1,4 +1,4 @@
-FROM quay.io/projectquay/golang AS builder
+FROM quay.io/projectquay/golang:1.26 AS builder
 ARG APP_NAME
 ARG HOST_ARCH
 WORKDIR /go/src/app
