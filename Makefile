@@ -1,5 +1,7 @@
-APP_NAME=app 								#place app name here
-REGISTRY=quay.io/inezhinskiy				#place your registry
+# place app name here
+APP_NAME=app
+# place your registry
+REGISTRY=quay.io/inezhinskiy
 HOST_ARCH=$(shell dpkg --print-architecture)
 IMAGE_TAG=$(REGISTRY)/$(APP_NAME)-$(HOST_ARCH)
 format:
